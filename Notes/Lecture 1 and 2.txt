@@ -1,0 +1,89 @@
+* Create React git
+
+* React have two attachment :-
+ -> React native -> For mobile app developmnet
+ -> React DOM -> For web decelopmemt
+
+
+
+********* NPX **********
+
+* Node package manager, it downloads the library or package in js
+
+* But sometimes we dont want to download stuff but use them diectly, so we use npx. Node package executer
+
+
+
+********** Creating app using NPX ***************
+
+* npx create-react-app NameOfProject
+
+* But it is a bulky utility, it provides us with alot of things which we dont usually use. So nowadays it is recommended to make  a react app using utility of Vite or Parcel, and we can make custom build process through it
+
+
+* In node package -> dependencies -> we have testing library (that we dont usually use).
+* react and react domm
+* react script
+* web vitals -> It is used to test how fast our application is
+
+
+* Scripts :-
+
+Project ko chalati hai yha production ke liye ready karti hai.
+
+start-> To start the app in development env
+
+build -> To start the app in production env
+
+test-> To test the app
+
+eject-> To remove the react from the  project
+
+
+eslint-> Gives us warning (red line) even tho it is not a error but warning
+
+* BrowserList -> List of browser where react will work
+
+
+* To run the start script or the app
+We will use 
+"npm run start" or direct use "start"
+
+
+ * When we click on page source in react app, then we wont be able to see its code unlike other site. Because react dont present code in the form of html to browser, that is why React is not a seo friendly
+
+* npm run build -> It will create build. Jitna bhi js hum development mai likhege wo js mai convert ho jayge in build
+
+* create react app isnt a good way because it is too bulky. that is why we will use vite.
+
+************** VITE *****************
+
+* Go to vite doc
+
+* We will craete react through vite. 
+npm craete vite@latest
+* Then it will ask for kiss framework se bnana chate ho. Click on react
+
+* There is no node module in vite.
+
+*Here the starting script is dev, so npm run dev
+
+* And in dependencies u will see there is no testing library, just react and react dom
+
+* Dev dependencies sirf development ke time use hoti hai
+
+* npm i -> to craete all the required packages and form a node module
+
+
+*******************************************************
+
+
+* npx react-> src-> deleting test-> vital -> logo-> app test -> app css
+
+-> Index.js remove unnecessary import, uncomment, same with app.js 
+
+* In npx we use app.js and in vite we use app.jsx. but it doesnt matter since it is a library, it dont have any strict syntax unlike frameworks.
+
+
+
+ 
