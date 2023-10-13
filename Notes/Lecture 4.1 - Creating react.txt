@@ -1,0 +1,70 @@
+* So we are going to create the react for ourselves
+
+* Making a folder name custom react
+
+* Making index.html in it, creating root element and then also adding script like vite
+
+* Customreact.js as a script
+
+const mainContainer = document.querySelector('root');
+
+// We created a variable name mainContainer and selected the root element in it
+
+const reactElement = {
+
+}
+
+// Now we are gonna see how react see the html that we return. How it see it after we compile it.
+
+
+To jo bhi hum return karte hai react unka tree bnane ka try karta hai.
+
+So lets see how react see the element that we return through its inner functions. Suppose we are returning an anchor tag, 
+
+Then it will make an object about it having its details which include its
+
+type: 'a',
+props : {
+// The properties that we give
+
+href : '',
+targget: ''}
+
+children : 'Click to visit gooogle'
+}
+
+
+that is how react compile the element i the tree format for each element that we return
+
+* Now we want a method that return these elements and inject them into root
+
+* To now we have to craete a function that can take these elements from react element and render these elements in root element
+
+* so what we will do is create a function that will take container and react element as a aargument.
+
+* we will make a variable name domElement and create the element uin it using doc.createlement(re.type)
+
+* Then we will add body in it using de.innerHTML = re.children
+
+* then we will set attributeb in it using 
+
+de.sA(re.props.key, re.props.target);
+
+* Then we will append them into container
+
+container.append(domElemnet);
+
+
+
+* The function will get complte, now  we will make that function better using loops
+
+
+* for in loop {
+
+if(prop===children) continue;
+de.se(prop, re.props.prop)
+}
+
+* This is how react works. Now we will go into vite to understand it better
+
+

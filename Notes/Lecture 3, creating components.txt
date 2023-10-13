@@ -1,0 +1,83 @@
+******** Lets see how js get inject in html *********
+
+
+* To show the js in html page we have to include the script in js. 
+
+* package lock json, lock the dependencies ki ye isi version par chalega
+
+* Gitignore -> ignore in git
+
+* manifest -> jab mobile mai react app ko open karte hai, tab ye kaam aata h for meta tags
+
+* index.html -> single page application , ek hi page hai jisme sab kuch hoga
+
+* in public-> index.html -> div id = root
+
+* src -> index.js -> use of react dom library to manipulate the web page -> dom is a tree structure -> browser ka khud ka dom hai -> react khud ka dom bnata hai which is called virtual dom aur iss dom ko main dom se compare karte hai, aur jo change hoga usse hi main dom mai change karte hai else everything is same
+
+* createRoot-> taking element by id and look for an element jiski id root hai. If u remember we have created the root in index.html
+
+* Ab root mai APP.js ko render karna hai
+
+Hum javascript ke through jsx ko render kar sakte hai
+
+
+* Strictmode is for help in develpment. 
+
+* APP ek function hai jisme html hai aur hum uss html ko render kara dere hai
+
+* Ab isse humare pass html mai programming ki capabilities agyi hai.
+
+* Jab humne index.html mai koi js ki script add nhi ki to js apane aap kese load hoja rhi hai ???
+
+package.json-> react-script-> It is responsinble for adding script in index.html
+
+page source -> u will find script in the page source.
+
+inspect-> body -> Bhut sari script milegi (which react script addead automatically)
+
+
+********* Now lets go to VEET *****
+
+* package.json -> there is no react script here
+
+* Iss mai directly add kia hai index.html 
+
+
+* index.jsx/main.jsx 
+
+* Same in main.jsx as index.js
+
+
+******** Now thee question arises *************
+
+* When we can render the app.js in index.js, can we render other functions in app.js
+
+* making chai.js in src
+making function here and returning h3 here 
+
+* exporting the chai
+
+* importing the chai in app.js
+
+*In vite we have to make any component with jsx and if we want to render a component we have to write it in uppercase
+
+* In jsx we can return only one element that is why enclose all the elements that we want to render in div 
+
+* or we can use <> and </> called fragment
+
+
+****** Using create react app now *********
+
+* making chai.js
+creating function and returning an element in it
+
+* app.js mai import and enclosing the return in fragment
+
+* Name the function or component in upper case
+
+ 
+
+
+
+
