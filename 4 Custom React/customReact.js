@@ -7,8 +7,8 @@
 
 function customRender(ReactElement, mainContainer)
 {
-
     //  In this function we will create that element and append it to the main Container or the root element
+
     const domElement = document.createElement(ReactElement.type); // This will create the DOM element
 
     domElement.innerHTML = ReactElement.children;
