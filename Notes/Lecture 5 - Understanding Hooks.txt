@@ -1,0 +1,73 @@
+* Creating vite project
+* Clearing app.js
+* App.jsx -> h1-> Chai aur react
+h2 -> Counter value : 5
+
+* Making button for adding value and an another button name remove value
+
+* We have on click method in js to do a action on button
+
+* Making counter value and we will update its value when click on button with a function
+
+* And we have added that variable in jsx which which will display the value of counter in front end
+
+* onClick = {addValue}
+
+const addValue = () => {
+
+console.log(Adding value, math.random()
+counter++;
+}
+
+* Now when we are clicking the button is working but the value is not updating on counter in webpage
+
+* Now the value of counter is increasing but its not upddating on the jsx counter
+
+* The problem is occuring in ui updation and that is where the real power of react comes in
+
+* Adding counter in add value and remove value and then adding a paragraph and adding the value of counter there too
+
+* Now that is when hooks come in, through hooks we can update the data everywhere when the value of a variabke get updated
+
+* Hooks are methods and they are of various type
+
+* Every hook have his own jobs
+
+* Ui updation is controlled by react
+
+* We get hook from useState, we get use state hook from it
+
+To import hooks
+
+import {useState, useEffect} from 'react'
+
+* use State is responsible to change the state and propogate the change into UI or dom
+
+* useState(default value is given here)
+
+* Through useState we get an array
+
+* the first element is a value (default value) and the second element is a function
+
+const [counter, SetCounter] = useState(15)
+
+* so what hooks do is they update the state and also propogate the changes in UI
+
+* That is why it is called because its react whenever the state or the value of it changes everywhere without writing any code
+
+* Now we will call the setCounter whenever we click on addValue
+
+counter = counter+1
+setCounter(counter+1);
+
+* Make a function to decrease the counter
+
+* Assignment =  The last value that can be added is 0 and the highest value that can be attended is 20
+
+ 
+
+
+
+
+
+
