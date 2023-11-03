@@ -1,0 +1,143 @@
+
+****** Injecting tailwind with vite ***********
+
+
+* Making vite project
+
+* lets configure template
+
+* Go to framework guide in tailwand site and look for react vite
+
+* We weite "-D" in install
+npm i -D tailwandcss ...
+
+-D is for downloading the developer dependency, 
+Unlike dependency, developer dependecies are only required while building the product, we dont require it to run the product or  when the product is build 
+
+* npx tailwindcss init -p
+It will generate a file name teailwind config
+
+* Change the content in tailwand config as mention in documentation
+
+* This added array will search in src and index.js
+
+* In index.css inject the tailwind
+
+* Now we can use the tailwind classes
+The keyword for it is ClassName
+
+className = 'bg-green' -> For making the  bg colour
+
+text-black -> text colour
+
+p-4 -> For giving the padding of size 4
+
+* rounded -xl -> for givinng the border radius, xl refers to the size
+
+* Look for components in tailwind explore the documentation as per your need
+
+* Adding the card
+
+* Tailwind is responsive by default
+
+******** JSX and tailwind ********
+
+* We can also use dev ui, and take components from there taking any card from there
+
+* giving margin in tailwind test
+
+
+****************** Props ********************
+
+* Props is use in reusability
+
+* Generally we take and write html, css and js seprately. But in react we dont do that, in react we write everything in a page in a component and every componet have a function
+
+* So in react we seprate files by there functions like components
+
+* Now if we have to use card again and again why dont we make a component of it seprately and use that component in other component whereever it requires. In that way we dont have to repeat the code for cards
+
+
+* Making a new compinet of card. 
+Created a folder name component and created a Card.jsx(capital letter) there
+
+
+********** Creating Component ******
+
+* react snippets->rfce for react functional component
+
+* importing card in app.jsx
+* <Card />
+and we can repeat the card as many times as we want using its syntex <card/>
+
+**** Props *******
+
+Every component have a access of props 
+
+and we can use it by giving props in the argument of function component
+
+* Props give us a object
+
+
+* Lets see what do props give us using
+
+console.log("Props=", props);
+* It will give empty object
+
+* To add the properties in props of object
+
+We can give it using
+<Card channel = "chaiaurcode"> 
+
+* Can it also accept a objct or array in props the answer is NO
+like 
+<Card ankit= [1,2,3]> ->> NO
+We cant give array like this
+
+<card ankit= {"name" : "Chai"}>
+The answer is still no
+
+* But if in our function we declare a object and then if we pass it as a vatriable give it will it accept it, the ans is yes
+
+
+myObj = {
+name :"Ankit"
+Surname : "Jain"}
+}
+
+
+<Chai soemObject = {myObj} />
+
+The answer is Yes, we have to ass it as a variable using {} so that jsx would know that we are passing a variable
+
+
+* So can we pass array like that ?
+The answer is yes
+
+* So now we can use props in the component since its a objcect so to obtain its value we have to use props.key
+
+props.channel
+
+* There is another way to take props
+
+Like we wanted to do take the use of channel
+
+* we can directly take {username } in the argument and then we can directly use it using "username"
+
+*  <card channel = "ankit" btnText = "Click Me" >
+<card channel = "Jain" btnText = "Visit Me" >
+
+
+* We can also give a default props, if we dont pass the value of btntext then it will take the default value
+
+Give the default value in argument
+
+{username, btnText= "}
+
+
+
+
+
+
+
+
