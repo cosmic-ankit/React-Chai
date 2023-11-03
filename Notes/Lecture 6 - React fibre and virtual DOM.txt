@@ -1,0 +1,34 @@
+* We dont use virtual dom in react these days
+
+* Lets see what createRoot method do in viet
+
+* It created a virtual dom like a browser dom in bg, it compare the main dom and virtual dom and only do update in things that is changed in UI
+
+* While in browser the dom is created all over again with each change and reload
+
+* In virtual dom we can track the whole dom in tree like structure and make the update only in things which is changed
+
+* Lets take an exmple
+We have updated a button in dom with another text, lets name this text as a "First change"
+And then we make another change in it and name it "Second change". 
+
+So react have to make two change here
+1) first change and then change it into second change
+
+* But isnt it possible that react wait for a while before making a change, in that case it dont have to make a first change, it can directly do the second change
+
+* That means we dont have to make any change instantaneously in react
+That is why react team thought
+
+
+* Lets study the React Fibre Architecture
+
+* Virtual dom still exist in react but we update it using fibre algorithm these days
+
+* React phle immediately change karta tha uss sai animation mai kafi effect parta tha, that is why we are using fibre algorithm these days
+
+* Go through the lec video or this github notes to better undeerstand it
+
+https://github.com/acdlite/react-fiber-architecture#react-fiber-architecture
+
+
