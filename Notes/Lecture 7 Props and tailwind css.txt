@@ -47,9 +47,8 @@ p-4 -> For giving the padding of size 4
 * giving margin in tailwind test
 
 
-****************** Props ********************
+****************** Component ********************
 
-* Props is use in reusability
 
 * Generally we take and write html, css and js seprately. But in react we dont do that, in react we write everything in a page in a component and every componet have a function
 
@@ -70,7 +69,11 @@ Created a folder name component and created a Card.jsx(capital letter) there
 * <Card />
 and we can repeat the card as many times as we want using its syntex <card/>
 
+
+
 **** Props *******
+
+* Props is use to transfer the value or information from one component to another
 
 Every component have a access of props 
 
@@ -129,11 +132,9 @@ Like we wanted to do take the use of channel
 
 
 * We can also give a default props, if we dont pass the value of btntext then it will take the default value
-
 Give the default value in argument
 
 {username, btnText= "}
-
 
 
 
