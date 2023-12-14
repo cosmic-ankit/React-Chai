@@ -1,0 +1,82 @@
+Lets build a bg changer application in which various colors button are present in navbar and when click on the the respective color get changed
+
+
+********* Setting up tailwind and vite ***********
+
+
+* Create using vite
+* Insstalling tailwind
+* Changing the content in tailwind config.js
+* Adding @tailwinds in index.css
+
+
+* So here we are gonna use state to change the color.
+
+const [color, SetColor] = useState("Olive")
+
+* Download intellisense of jsx and tailwind
+
+***************** Tailwind Classname:- *****************
+
+* w-full for full width
+* h-screen 100 percent height of screen
+
+style = {{bgColor: color}}
+
+* Adding a bottom bar which contains colors button
+
+
+Classname = fixed flex flex-wrap
+justify-center 
+
+Fixed -> Make the element fixed, it wont move when i will scroll the window.
+
+flex: This class is part of Tailwind's Flexbox utility classes. It is used to enable the Flexbox layout for a container. Flexbox is a one-dimensional layout method for laying out items in rows or columns.
+
+flex-wrap: This class is used in conjunction with the flex class to control whether the flex container should wrap its children onto multiple lines or not. By default, flex containers will try to fit all their children into a single line, but if you apply flex-wrap with a value like wrap, it allows items to wrap onto multiple lines.
+
+
+bottom-12 ---> that means make it fixed away from 12px of bottom.
+
+insext-x-0 ---> Fixed the position from left and right
+
+px-2 ---> padding in x axix will be 2
+
+
+***** Creating a bar *******
+
+flex, flex-wrap, justify-center, shadow-lg, gap-3, bg-white, rounded-xl, px-3, py-2
+
+gap -> gap between flex container of flexbox
+
+
+********* Making Buttons *********
+
+* Create buttons in bar
+
+outline-none in button and px-4, set bg color i it using inline css and make it rounded-full
+
+* Set text-white and shadow-lg
+
+
+* Make other buttons as well
+
+* So onclick except a function in argument but we cant give a reference of a function in it. It expect us to define a function in it and then  it will run it.
+
+* So if we declare 
+onClick = {setColor("Blue")}
+
+It will give a error because in argument onClick will recieve the return value of setClick function as it will execute directly.
+
+* onClick expect us to define a function in it. so the correct way is
+
+onClick = {() => setColor("red")}
+
+So we have defined a call back function in it which call the setColor function
+
+ 
+
+
+
+
+
