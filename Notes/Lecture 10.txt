@@ -1,0 +1,194 @@
+**********************
+      Lecture 10
+**********************
+
+
+* Create the project of vite react and integrate the tailwind
+
+* Making the tailwind css 
+
+* Creating the base at app.jsx
+h1 = password generator
+
+* Creating dark black bg using index.html
+
+ClassName = text-4-xl, text-center, text-white
+
+
+* Creating the usestate for updating length of the passord
+
+const[length, setLength] = useState[8]
+
+* To allowing the number we will take the value as true or false
+
+const [numberAllowed, setNumberAllowed] = useState[false];
+
+* Same goes with the character
+
+* Making the one for password.
+Now to create the password as soon as the site load we will use a kind of hook, which is discssed later
+
+* Now creating a method for password Generator
+
+* Now the password generator should run when :-
+
+ whenever tyhe site is load
+ number is true or false
+ char become true or false
+ the length of password is changes
+
+****************    Now there is a hook called useCallBack **************
+
+usecallback takes the function and a dependency(variable) in argument, it render only the function (not the entire component unlike useState) whenever the value of dependency or variable changes.
+
+* Also the main aim of useCallback is to memorize the function and its result on the basis of change in its dependencies. It store there respecive result in cache, so it optimize our code
+
+* Without useCallback, the function would be recreated on each render but it doesnt coz it memorize it and store it in cache
+
+
+* It memoizes the function, meaning it returns a memoized version of the function that only changes if its dependencies (specified in the dependency array) change. 
+
+* It takes two argument the function which should re render and the dependency which will make it to re render
+
+* The dependency are passed in the format of array
+
+* UseState -> renders the component wherever the change take place
+UseCallBac -> renders the function whenever the dependency changes
+
+*******************************************
+
+* Now here lengt, number and char are dependency, the function should re render whenever the dependency get change
+
+* define use call back on top
+
+const passwordGenerator = 
+usecallback (fn, [length, numallow, charall, setpass])
+
+()=> {
+
+let pass = "" // It will store our passowrd
+
+
+
+**************** Password Generation Function ********************
+
+Now in str we will create a string of pool of possible characters that we can use, if num or character is allowed we will concetinate them into the str
+
+let str = "A-Za-z" 
+if(numAllowed) = str+ "1-9"
+if(charAllowed) = str+ "!@#$%^&*()_+-"
+
+for(int i = 1; i<=length ; i++)
+{
+// Now here we will generate a random index and then we will get the element of str of that index and add that into pass, we will do it length no of times
+
+let char = Math.floor(Math.random() * str.length + 1) // Creating a random number
+
+ pass += str.charAt(char) // Addinng the random index of str in pass
+}
+setPassword(pass)  // Setting up the password
+
+}
+
+Math.random create a random no between [0,1) 0 is inclusive, 1 isnt
+Doing +1 to make sure 0 wont come
+Math.floor round up the sol to nearest index
+
+
+*********************** Creating the body  ********************************
+
+Reefer to the code imp notes are present there and for understandin classes and all u are just a GPT away
+
+********************************************** UseEffect *****************************
+
+* we cant call the func directly in react because when will react render it when the page will load isnt in our hand, So to call the func either we can make a button which will call it or we can use a hook
+
+UseEffect:-
+
+UseEffect is run when the component het mounted fuully and then it gets run, Also it run again whenever there is a changes in its depenedencies.
+
+* Then why to use UseCallBack, cant we directky use useEffect instead :-
+Well we can do that but we didnt used useCallBack for running the func but to optimize according the code, to store the func and its result in the cache memory wrt their dependencies.
+
+
+
+************************* Key Differences **************************
+
+Key Differences:
+
+Purpose:
+
+useEffect is primarily used for handling side effects after the component renders.
+useCallback is used for memoizing functions to optimize the performance of components, especially when dealing with functions passed as props.
+
+Return Value:
+
+useEffect does not return a value.
+useCallback returns a memoized version of the callback function.
+
+Dependencies:
+
+useEffect may have dependencies specified in its dependency array, and it runs whenever those dependencies change.
+useCallback also takes a dependency array, but it mainly focuses on memoizing the function based on the dependencies.
+
+
+
+
+
+
+***********************************
+
+* Declare the useEffect
+* We dont need to store it in variable
+
+useEffect(() => {passwordGenerator() }, [length, numAllowed, harAllowed, passwordGenerator])
+
+
+*********** How to Copy ********************
+
+
+*********** UseRef*************
+
+* It is a reference hook. We use it whenever we have to manipulate the dom of any element by taking it as a refernce.  Here we could directly make the funcyion and could copy the password but here we wont be able to manipulate the dom with it.
+
+* Unlike the useState hook, useRef doesn't trigger a re-render when its value changes. Instead, it allows you to persist values across renders without causing re-renders.
+
+* We will create the useRef here and pass the reference inside the input element so that we can manipuateits dom as well
+
+
+
+
+const passwordRef = useref(num) // No default value so null
+
+* We can pass ref in any argument or input
+
+* In input we can write
+
+ref = {passwordRef}
+
+
+In button:-
+
+onClick = {copypPassToClipboard}
+
+
+const copyPassToCP = useCallBack(()=>{
+
+window.navigator.clipboard.writeText(password) // to access the clipboard
+passwordRef.current?.select();
+
+
+}[password])
+
+To copy the clipbiard we can directly use window and its function becayse we are using react and render happen in client side
+But in next js we cant use window and its prop because rendering happen at serverside
+
+//Making it usecall back to optimize it
+
+//passwordRef.current?.select();
+It is a useRf function to select the texts in the Ref element
+
+
+ 
+
+
