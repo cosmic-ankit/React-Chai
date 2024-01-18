@@ -17,7 +17,7 @@ function App() {
     let genpass = "";
     if (num) str += '123456789';
     if (cap) str += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    if (char) str += '!@#$%^&*()_+=-.~';
+    if (char) str += '!@#$%^&*()_+=-.~';3
 
     for (var i = 0; i < length; i++) {
       let index = Math.floor((Math.random() * str.length)); // It will create the random number

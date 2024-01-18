@@ -4,8 +4,8 @@ Lets build a bg changer application in which various colors button are present i
 ********* Setting up tailwind and vite ***********
 
 
-* Create using vite
-* Insstalling tailwind
+* Create using vite 
+* Installing tailwind
 * Changing the content in tailwind config.js
 * Adding @tailwinds in index.css
 
@@ -34,7 +34,6 @@ Fixed -> Make the element fixed, it wont move when i will scroll the window.
 flex: This class is part of Tailwind's Flexbox utility classes. It is used to enable the Flexbox layout for a container. Flexbox is a one-dimensional layout method for laying out items in rows or columns.
 
 flex-wrap: This class is used in conjunction with the flex class to control whether the flex container should wrap its children onto multiple lines or not. By default, flex containers will try to fit all their children into a single line, but if you apply flex-wrap with a value like wrap, it allows items to wrap onto multiple lines.
-
 
 bottom-12 ---> that means make it fixed away from 12px of bottom.
 

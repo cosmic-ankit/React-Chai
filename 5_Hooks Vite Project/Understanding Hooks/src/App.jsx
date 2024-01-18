@@ -83,6 +83,7 @@ export default App
 
 
 // So in React we dont need to select element and then change its colour or to select an element and change its text value
+
 // In React, when you change the value in state or hooks, the UI is automatically re-rendered to reflect the updated state. React's reactivity system is responsible for detecting changes in state or props and then efficiently updating the DOM to reflect those changes.
 
 // That is why react is named as React because it reflect the changes everywhere when a state get changed.

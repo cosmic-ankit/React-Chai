@@ -8,7 +8,7 @@
 
 ********* NPX **********
 
-* Node package manager, it downloads the library or package in js
+* Node package manager (NMP), it downloads the library or package in js
 
 * But sometimes we dont want to download stuff but use them diectly, so we use npx. Node package executer
 
