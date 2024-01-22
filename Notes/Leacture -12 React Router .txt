@@ -1,0 +1,157 @@
+************* Leacture -12 React Router *********************
+
+* React Router Dom is a third party library
+
+* Creating Vite project
+* Download react router Dom
+* Craete header and Footer in the componnet
+* Take the sample code of both of them from repository
+
+* Link and NavLink are the functions or snippets come from react router dom
+
+* Importing Link and Navlink in header.jsx
+
+*********** NavLink Vs Link ************
+
+* Link is a replacement for anchor tag, here the whole page dont refresh link a tag. Here just dom changes
+
+* Instead of href we write "to" here/
+to= "/" 
+
+* NavLink provide additional functionalities :-
+
+ In NavLink we want to style tag according to if the tab is active or not, so we write the classname in callback. In navlink if we use callback it gives us a direct access to the variable called isActive, if the tab is on then its value is true else false, using this variable we can manipulate the classes.
+Ex:-
+{isActive ? tex-color-orange : text-color-black}
+
+
+Hw:- Do the same with link in footer
+
+***********************************************
+
+* Footer, copy paste the sample code
+* Create Home Component -> home.jsx
+
+* We dont need app.jsx since we are using react router dom, we wont render app in main.jsx instead we will import RouteProvider and will importb it, it take one prop named as router
+
+<React.StrictMode>
+  <RouteProvider router = {router} />
+<React.StrictMode />
+
+* It take router as input
+
+************ Creating router in main.jsx *********
+
+* CBR is a method which contauns array
+
+const router = createBrowserRouter([
+{
+It contains all the pages that we have to route and its path
+
+path:'\'
+element:<Layout>
+children:[
+
+{
+path:"",
+element<Home />
+},
+{
+path:"aboutUS"
+element<about />
+}
+]
+
+}
+])
+
+* Now we will create a comopnent let we call it "Layout" or "Route"(in general we name it Route), it is a component which contain all component like app.js. (We can also use app.jsx insead of it)
+
+Now within thic comonent we will use React Router Facility of Outlet which contains all the element that we have to route that will keep changing when we click on it.
+Here conact us, about us, home page are something that will change and header and footer will stay constant. So we will use about us/contact us and home in this.
+
+* <header>
+  <outlet>
+  <footer>
+
+Here header and outlet will remain constant and things in outlet will keep changing. 
+
+* Set path in Navlink using to="\" or to="\AboutUs"
+
+************ Now lets summarize the Routing ***************
+
+* First we will install the react Router then we change the Rendering of app.jsx to React Provider and provide a prop of router in it which get created with the help of CBR and which hold the info of the layout element and the element which will render in it when the route will change
+
+* We have to create a layout page which will have a info of how the page will appear and a function called OUTLET, at the place of outlet other routing component will appear according to the path
+
+**********************************************************
+
+****************Another Way *************
+
+
+
+const router = createBrowserRouter(createRoutesFromElements(
+  <Route path='/' element={<App/>}>
+    <Route path='' element = {<Home/>}/>
+    <Route path='AboutUS' element = {<AboutUs/>}/>
+    <Route path='ContactUs' element = {<ContactUs/>}/>
+  </Route>
+))
+
+
+* Use of createRoutesFromElement then use Route to render the layout and route within it to render the children
+
+
+***************** Taking Parameter from The user id ************
+
+* How to take dynmaic data ?
+
+* If we want to pass the parameter using route we can do that in React
+
+* For that we have to set the path and the component that will appear in that path 
+
+Within that path we will set up a variable and we will use that variable to recieve the parameter within that component
+
+import { useParams } from rrd
+
+const {userID} = useParams()
+
+<Route path="user/:userID" element = {User} />
+
+* Now here we have setup the parameter userid and we can recieve it using userid within user component
+
+* For ex :- user/100, we can take that 100 from thr userId in component
+
+********** Creating Github Component *******
+
+* Now we want to fetch some data from Github
+
+* Create NavLink and route for Github
+
+* Taking github followers from api link and we want the api to fetch when the component get loaded so we will use useEffect or the component get mounted
+
+* Creating a state to save data
+
+* Fetching the followers using data.followers
+
+* Adding img too
+
+********** Loader Property of React Router ************
+
+
+* Loader -> If we have to fetch the data from the api then we can make a api call directly from loader using api
+
+* So what happen is when we hover our mouse on the route link, the loader fetch the data then only even before the useEffect and save the data in cache memory and serve it when useEffect call it. So it optimize the process
+
+loader = {()=>{} }
+
+* We can also call the method from loader and make the function in the file of the component that we have to load and then import the function
+
+* Now to access the data within the component we have a hook called useLoader
+
+
+
+
+
+
+
