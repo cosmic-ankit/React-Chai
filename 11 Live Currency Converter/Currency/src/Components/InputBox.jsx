@@ -1,5 +1,6 @@
 import React from 'react'
 import { useId } from 'react'
+
 // use id is a react hook use to create a unique id, and we use this id to give this id to elemnet and to link elements like htmlFor and its id
 // useId is a React Hook for generating unique IDs that can be passed to accessibility attributes.
 // useId should not be used to generate keys in a list. Keys should be generated from your data.
@@ -11,9 +12,11 @@ import { useId } from 'react'
 
 function InputBox({
     className = "", // We are creating a industry standrd code, so we are adding it since if we want to add other className we could just type in the value here and it will be added to the element, by default it is empty.
+
     label, // Uisng label, we will pass "From" or "To" in it
+
     amount, // Amount is a variable which will contaun the amount put by the user
-    onAmountChange, // Its a function to make the amount variabkle equal to the amount change by user in value
+    onAmountChange, // Its a function to make the amount variable equal to the amount change by user in value
     amountDisabled = false, // If we ever want to diabe input option, by default its false
     CurrencyDisabled = false,
     selectCurrency = "usd", // It is a variabe which stores the currency selected by the user

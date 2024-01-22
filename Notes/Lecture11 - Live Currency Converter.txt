@@ -1,0 +1,69 @@
+Live Currency Converter
+*****************************
+*****************************
+
+* Create the tailwind vite app
+
+* Hook is a type of function too. And we can create a custom hook too
+
+
+****************************************** Custom Hook ***********
+
+* In SRC -> Hooks folder ->useCurrencyInfo.js
+
+(We create a hooks in js because hooks usually in js because they usually return in JS)
+
+* In UCC we will use the custom Hook
+UseEffact and UseState
+
+
+import {useEfeect, useState} from "react"
+
+//Adding use because in hook we usually add Use
+
+//This hook will return the data from the API
+
+* We want to have data when the component is mounted so we will use useEffect
+
+function UCI (currency)
+{
+const[data,setData] = useState
+useEffect(()=>{
+fetch(Link of url)
+
+//.then is a function of fetch
+.then((res) => res.json())
+//It will convert it to json
+.then((res) => setData(res[currency]))
+
+}
+ [currency])
+
+//Here currency is the dependency, we want to update our data as the currency changes
+
+// We will fetch the api here which gives the currency conversion rate of all the currency for a given currency in link
+
+In the form of a string though it looks like json, so we will cnvert it into json
+
+
+
+*********** Reusbale Component **********
+
+
+******** InputBox.jsx in a Components **********
+
+* Input box is a container to write the currency and where the user will put the value of currency.
+
+*rfce for functional based component
+
+* whenever we are using loop in react use key
+
+* Go to inputBox component the notes are there
+
+
+Well i am done with the input box, lets do great things man and i believe in u and u can do that
+
+
+
+
+
