@@ -1,0 +1,146 @@
+Lecture - 13  Part 1 (Context API)
+
+************************** 
+
+* So back in the days when context api wasnt there, if we have to pass the prop for ex to a card
+
+<App username="Chai" />
+!
+!
+!
+<Dashboard username />
+!
+!
+!
+<Hero username />
+!
+!
+!
+<Card username />
+
+
+Now we want to take the value of prop in card which exist in Hero and  which exist in Dashboard, so to do that we have to pass the prop to all the components until we reach the children component where we have to use it, even tho we dont have a use of it in other component. This problem was called Prop Drilling. To counter this problem context api come into existence.
+So context api is like a global file in which value of prop is there and we can access it directly through that file.
+
+* There is also some other APIs which solve this problem such as Redux, this API helps in state management
+
+* Redux have one easier version called as redux Toolkit
+
+* zustand is another easier library
+
+* We could make the global file and extract the data from there too but then there would be the problem in state management. 
+
+* Using a global file to store variables and state management in React can work, but it might not provide the same level of reactivity as using the Context API or other state management libraries. Reactivity typically refers to how changes in state trigger updates in the UI.
+If you simply store variables in a global file and use them directly in components, changes to those variables might not automatically trigger re-renders of the components that depend on them. This is because React relies on its own mechanisms to track state changes and trigger updates.
+
+Reactivity refers to the ability of components to automatically update when the state changes. Context API supports reactivity, meaning components consuming the context will re-render when the context value is updated. A simple global file may not have this built-in reactivity.
+
+
+
+***************************************
+
+* Creating a new project
+* We can add context or state mangement later or in the begining of the project too
+
+* So we are trying to is to build a sign up form in which username and password will be given by the user, we will save that username and password and send the data to another comonent called profile in which we will show the username and password given by the user.
+
+* So what we will do is it create a context api which will have the info of two variable of username and password and a usestate which will help to change or set the value of these username and password
+
+* We create two files for a context, one file which create the context and the other file in which state or data is stored and provided to the components.
+
+*************** Creating Context **********
+
+
+
+* src -> Contet Folder-> userContext.js( Where context is created, js Because we use only js in it
+) -> 
+
+UserContext.js
+
+const UserContext = React.createContext();
+
+export default UserContext;
+
+* Now context gives us a provider. here UserContext is a provider.
+
+
+
+
+********** UserContectProvider.jsx ********
+
+* Now how to make the contxt available to every component 
+To access the context in a component we have to wrap that component in the provider of that context Ex:-
+
+<UserContextProvider>
+
+<Login/>
+<Card>
+   <Data/>
+</Card>
+
+</UserContextProvider>
+
+* Now user context will be available within all these components
+
+* So what we gonna do is we create a object in a variable and pass that as a variable and its setstate and that too in pbjecy
+Then we retrieve the data from object and set the object within the variable
+Pass it over to another component and get the value we want from the object
+
+
+import React and userContext
+
+
+const UserContextProvider = ({children}) =>{
+
+const [user, setUser] =useState({})
+//This is the data that we will give
+
+return (	
+<UserContext.provider value = {{user, setUser}}>
+{children}
+<UserContext.Provider/>
+)
+
+}
+
+
+* Children is like a layout here in which the component renders
+
+* Now we have wrap the children here
+
+* The data of function and variable will be given through making an object which contain them and passing in in a value
+
+************* Go in App.js *******
+
+* Wrap the component in <UserContextProvider>
+<component>
+</UserContextProvider>
+
+
+* Now the component have a direct access of the context
+
+
+********************************************
+
+Lets Create the component to access and send the data
+
+
+* Components -> Login.jsx and -> profile.jsx
+
+
+********** Login.jsx *************
+
+* Now we will create a useContext Hook to import the data
+
+import React, {useState, useContext}
+import UserContext
+
+
+
+
+
+
+ 
+
+ 
+

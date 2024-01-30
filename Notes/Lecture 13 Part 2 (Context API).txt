@@ -1,0 +1,100 @@
+***************** Lecture 13 part 2 ********************
+********************************************************
+********************************************************
+
+
+* Take tailwind notes from the github
+* There also exist a tailwind playground that we can use through cdn
+
+* In taiwind 
+dark in class enable all the classes with dark mode and with light all the classes in light mode 
+
+* So what we gonna do is create a card and a component of switch mode in it.
+
+Now when we will toggle the switch in switch component, we also want the updat of mode to be done in card component, so we want our data to be share, hence we are gonna use context api for data sharing and updation
+
+
+**************** Creating Theme Switcher ********
+
+* Creating the project
+* Take App UI from notes
+* Lets create the context now
+* Create context -> theme.js
+We can also give defualt value in createion of context
+
+const ThemeContext = createContext(
+{
+//Now here we send an default object in value
+
+themeMode: "light"
+darkTheme : () ->{}
+lightTheme: () => {}
+
+})
+
+* Sending themeMode and two functions in default 
+
+export ThemeContext
+
+export const ThemeProvider = ThemeContext.Provider
+
+* exporting themeContextProvider directly from here unlike the previous project syntax where we create another file for it and create a provider there and rendering chlidren there
+
+* Now if u want to imoret context hook and ThemeContext directly, we can create a hook which will return both of them, so we have to only import a hook and we can use context hook and ThemeContext
+
+
+export defualt function useTheme ( ) {
+return useContext(ThemeContext)
+}
+
+*** Now we have done all the work in one file, we usually do it in prodution level code ***
+
+* Now wrap the components in provider in app.jsx
+<ThemeProvider value = {{themeMode, lightTheme, darkTheme}}>
+<Components>
+<ThemeProvider>
+
+* We can also wrap main.jsx to get it in all component
+
+* Now we have light and dark mode function but they arent defined, to do that create a function with same name and define theme.
+
+* Creating useStatae for themeMode
+
+* const lightTheme = ()=>{
+setThemeMode(light)
+}
+* const darkTheme = ()=>{ //same }
+
+* Creating useEffect for changing the class in HTML
+
+*************************************
+Creating Componnets *****************
+
+
+**************** Card.jsx **********
+* rfce
+* Crad from notes
+
+
+
+************ ThemeButton.jsx *********
+
+* Code copy from ui
+* Importing custom Hook
+* const {themeMode, lightTheme, darkTheme}
+
+
+* In input
+
+value=""
+checked={themeMode===dark}
+
+onChange = {onChangeBtn}
+
+* const onChangeBtn
+
+ 
+
+**** Do it by yourself ********
+* Also enable the html property of tailwind in its config	
+

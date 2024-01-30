@@ -20,6 +20,7 @@ function SignUp() {
       <input
         placeholder='Username'
         type='text'
+        style={{ border: '1px solid #ccc', padding: '5px' }}
         value={username} // bound to state variable
         onChange={(e) => {
           setUsername(e.target.value);
@@ -28,12 +29,13 @@ function SignUp() {
       <input
         placeholder='Password'
         type='text'
+        style={{ border: '1px solid #ccc', padding: '5px' }}
         value={passCode} // bound to state variable
         onChange={(e) => {
           setPassCode(e.target.value);
         }}
       />
-      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleSubmit} style={{ backgroundColor: '#4CAF50', color: 'white', padding: '10px', border: 'none', cursor: 'pointer' }}>Submit</button>
     </div>
   );
 }
